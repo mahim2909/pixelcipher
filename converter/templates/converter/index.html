@@ -1196,7 +1196,7 @@
 
                 <div class="loading" id="encodeLoading">
                     <div class="spinner"></div>
-                    <p>ENCRYPTING DATA...</p>
+                    <p>ENCODING DATA...</p>
                 </div>
 
                 <label>Base64 Output Stream</label>
@@ -1215,7 +1215,7 @@
                 
                 <div class="form-group">
                     <label>Base64 Input Stream</label>
-                    <textarea id="base64Input" placeholder="// PASTE BASE64 ENCRYPTED DATA HERE" spellcheck="false"></textarea>
+                    <textarea id="base64Input" placeholder="// PASTE BASE64 ENCODED DATA HERE" spellcheck="false"></textarea>
                     
                     <div class="upload-separator">
                         <span>-OR-</span>
@@ -1234,7 +1234,7 @@
 
                 <div class="loading" id="decodeLoading">
                     <div class="spinner"></div>
-                    <p>DECRYPTING DATA...</p>
+                    <p>DECODING DATA...</p>
                 </div>
 
                 <label style="margin-top: 20px; display: block;">Decoded Image Output</label>
@@ -1464,7 +1464,7 @@
                 if (data.success) {
                     base64Output.value = data.base64_text;
                     charCount.textContent = `[DATA] ENCODED SIZE: ${data.base64_text.length} CHARACTERS`;
-                    showAlert('[SUCCESS] IMAGE ENCRYPTION COMPLETE', 'success');
+                    showAlert('[SUCCESS] IMAGE ENCODING COMPLETE', 'success');
                 } else {
                     showAlert(`[CRITICAL] ${data.error.toUpperCase()}`, 'error');
                 }
@@ -1497,7 +1497,7 @@
                 
                 if (data.success) {
                     decodedPreview.innerHTML = `<img src="${data.data_uri}" alt="Decoded Image">`;
-                    showAlert('[SUCCESS] IMAGE DECRYPTION COMPLETE', 'success');
+                    showAlert('[SUCCESS] IMAGE DECODING COMPLETE', 'success');
                 } else {
                     showAlert(`[CRITICAL] ${data.error.toUpperCase()}`, 'error');
                 }
