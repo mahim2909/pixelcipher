@@ -1,13 +1,9 @@
-# Django
-*.pyc
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
-venv/
-ENV/
 build/
 develop-eggs/
 dist/
@@ -20,13 +16,19 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Database
-db.sqlite3
-*.sqlite3
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+.env
 
 # IDE
 .vscode/
@@ -34,14 +36,81 @@ db.sqlite3
 *.swp
 *.swo
 *~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+/media/
+/staticfiles/
+.env
+.env.local
+.env.*.local
+
+# Static files
+/static/
+*.css.map
+*.js.map
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+.hypothesis/
 
 # OS
 .DS_Store
 Thumbs.db
+*.bak
+*.tmp
 
-# Django media
-media/
+# Node modules (if using frontend build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
 
-# Vercel
-.vercel
+# Uploads
+/media/uploads/
+/uploads/
 
+# Cache
+*.cache
+.cache/
+
+# Mac
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+desktop.ini
+
+# Compiled files
+*.o
+*.a
+
+# Deployment
+.vercel/
+.netlify/
+
+# Environment specific
+.env.production
+.env.development
+.env.local
+
+# IDE specific
+.vscode/settings.json
+.vscode/launch.json
+.idea/workspace.xml
+
+# Project specific
+config.json
+secrets.json
