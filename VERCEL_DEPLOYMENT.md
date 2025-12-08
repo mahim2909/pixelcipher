@@ -74,6 +74,9 @@ In the Build & Development Settings:
 **Issue**: Function timeout (>30 seconds)
 - Solution: Vercel functions timeout at 30 seconds. Optimize image processing or use a dedicated server
 
+**Issue**: Memory limit exceeded
+- Solution: Hobby plan (free) = 2048 MB max memory. For higher limits, upgrade to Pro plan (create a team)
+
 ## Environment Variables Reference
 
 ```
@@ -99,7 +102,53 @@ ALLOWED_HOSTS=.vercel.app,localhost,127.0.0.1
 3. Vercel automatically detects changes and redeploys
 4. Monitor deployment in Vercel Dashboard
 
-## Performance Optimization Tips
+## Vercel Plan Comparison & Limits
+
+### Free Plan (Hobby)
+| Feature | Limit |
+|---------|-------|
+| Serverless Function Memory | 2048 MB (2 GB) |
+| Function Duration | 30 seconds |
+| Bandwidth | 100 GB/month |
+| Concurrent Builds | Limited |
+| Cost | Free |
+
+### Pro Plan (Team Required)
+| Feature | Limit |
+|---------|-------|
+| Serverless Function Memory | Up to 3008 MB (3 GB) |
+| Function Duration | Up to 60 seconds |
+| Bandwidth | 1 TB/month |
+| Concurrent Builds | Unlimited |
+| Cost | $20/month |
+
+### How to Upgrade to Pro Plan
+1. Create a Team:
+   - Go to Vercel Dashboard
+   - Click "Settings" → "Teams"
+   - Click "Create Team"
+   - Follow setup instructions
+
+2. Upgrade to Pro:
+   - Go to Team settings
+   - Click "Billing"
+   - Select "Pro" plan
+   - Add payment method
+
+### Memory Configuration in vercel.json
+Currently configured for **Hobby Plan (1024 MB)**:
+```json
+"memory": 1024  // Safe for free tier
+```
+
+To use Pro plan features (3008 MB):
+```json
+"memory": 3008  // Requires Pro plan
+```
+
+---
+
+## Post-Deployment Checklist
 
 1. **Image Size Limits**: 
    - Max 5MB per image recommended (for processing speed)
